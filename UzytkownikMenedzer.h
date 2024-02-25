@@ -1,6 +1,8 @@
 #include "MetodyPomocnicze.h"
 #include <iostream>
 #include <vector>
+#ifndef UZYTKOWNIKMENEDZER_H
+#define UZYTKOWNIKMENEDZER_H
 #include <fstream>
 #include "Uzytkownik.h"
 #include <windows.h>
@@ -24,10 +26,15 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
-    void logowanieUzytkownika();
+    int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    int wylogujSie();
+    int pobierzIdZalogowanegoUzytkownika();
 
-    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami):plikZUzytkownikami(plikZUzytkownikami){};
+    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami):plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
 
 
 };
+#endif // UZYTKOWNIKMENEDZER_H
+
 
