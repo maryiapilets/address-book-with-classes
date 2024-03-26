@@ -51,7 +51,20 @@ int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika(){
     uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
 }
 
+int KsiazkaAdresowa::usunAdresata(){
+    adresatMenedzer->usunAdresata();
+}
 
+int KsiazkaAdresowa::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata){
+  adresatMenedzer->podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsuwanegoAdresata,idOstatniegoAdresata);
+}
+void KsiazkaAdresowa::wyszukajPoImieniu(){
+    adresatMenedzer->wyszukajAdresatowPoImieniu();
+}
+
+void KsiazkaAdresowa::wyszukajPoNazwisku(){
+    adresatMenedzer->wyszukajAdresatowPoNazwisku();
+}
 
 
 

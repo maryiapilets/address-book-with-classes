@@ -31,6 +31,10 @@ public:
     int wylogujSie();
     void wyswietlWszystkichAdresatow();
     int pobierzIdZalogowanegoUzytkownika();
+    int usunAdresata();
+    int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
+    void wyszukajPoImieniu();
+    void wyszukajPoNazwisku();
 
 
 

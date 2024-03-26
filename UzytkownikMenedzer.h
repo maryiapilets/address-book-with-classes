@@ -22,18 +22,23 @@ class UzytkownikMenedzer{
     MetodyPomocnicze metodyPomocnicze;
 
 
+
+
 public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
-    int logowanieUzytkownika();
+
+    void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     int wylogujSie();
     int pobierzIdZalogowanegoUzytkownika();
 
-    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami):plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    UzytkownikMenedzer(string NAZWA_PLIKU_Z_UZYTKOWNIKAMI):plikZUzytkownikami(NAZWA_PLIKU_Z_UZYTKOWNIKAMI){
+        idZalogowanegoUzytkownika = 0;
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+   };
 
-
+     bool czyUzytkownikJestZalogowany();
 };
 #endif // UZYTKOWNIKMENEDZER_H
 

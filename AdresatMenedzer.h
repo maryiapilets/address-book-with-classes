@@ -8,24 +8,30 @@
 
 using namespace std;
 
-class AdresatMenedzer{
-    int idZalogowanegoUzytkownika;
-    int idOstatniegoAdresata;
+class AdresatMenedzer {
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
+
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
     MetodyPomocnicze metodyPomocnicze;
     Adresat podajDaneNowegoAdresata();
     string daneJednegoAdresataOddzielonePionowymiKreskami;
+    int podajIdWybranegoAdresata();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+
 
 public:
     void ustawIdZalogowanegoUzytkownika(int noweIdUzytkownika);
     int dodajAdresata();
-    AdresatMenedzer(string nazwaPlikuZAdresatami):plikZAdresatami(nazwaPlikuZAdresatami){
-
-    idOstatniegoAdresata = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci,idZalogowanegoUzytkownika);};
+    AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika):
+        plikZAdresatami(nazwaPlikuZAdresatami),ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
     void wyswietlWszystkichAdresatow();
-    void wczytajWszystkichUzytkownikowAdresataZPliku();
-
+    int usunAdresata();
+    int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 
 
 
