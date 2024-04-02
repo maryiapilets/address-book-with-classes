@@ -3,6 +3,7 @@
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
+#include "Menu.h"
 #include <vector>
 #include <fstream>
 
@@ -19,6 +20,8 @@ class AdresatMenedzer {
     int podajIdWybranegoAdresata();
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
+    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
+
 
 public:
     void ustawIdZalogowanegoUzytkownika(int noweIdUzytkownika);
@@ -29,13 +32,9 @@ public:
     };
     void wyswietlWszystkichAdresatow();
     int usunAdresata();
-    int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
-
-
-
-
+    void edytujAdresata();
 };
 
 

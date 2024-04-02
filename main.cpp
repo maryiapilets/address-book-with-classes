@@ -8,16 +8,6 @@ int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
 
-   //ksiazkaAdresowa.rejestracjaUzytkownika();
-
-   //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-  //ksiazkaAdresowa.wylogujSie();
-  //ksiazkaAdresowa.dodajAdresata();
-  // vector <Uzytkownik> uzytkownicy;
-  //  vector <Adresat> adresaci;
-
-    int idOstatniegoAdresata = 0;
-    int idUsunietegoAdresata = 0;
     char wybor;
     Menu menu;
 
@@ -30,7 +20,7 @@ int main()
             switch (wybor)
             {
             case '1':
-               ksiazkaAdresowa.rejestracjaUzytkownika();
+                ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
                 ksiazkaAdresowa.logowanieUzytkownika();
@@ -46,13 +36,6 @@ int main()
         }
         else
         {
-
-            //if (adresaci.empty() == true)
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-               // idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
-
             wybor = menu.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
@@ -70,11 +53,11 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
-                idUsunietegoAdresata =ksiazkaAdresowa.usunAdresata();
-                idOstatniegoAdresata = ksiazkaAdresowa.podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+                ksiazkaAdresowa.usunAdresata();
+
                 break;
             case '6':
-                //edytujAdresata(adresaci);
+                ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
